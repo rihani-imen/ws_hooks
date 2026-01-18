@@ -1,18 +1,13 @@
-import React from "react";
+import { moviesData } from "../moviesData";
+import MovieCard from "../components/MovieCard";
 
-import { Row, Col } from "react-bootstrap";
-
-import MovieCard from "./MovieCard";
-
-function MovieList({ movies }) {
+function MovieList() {
   return (
-    <Row>
-      {movies.map((movie) => (
-        <Col key={movie.id} md={4} sm={6}>
-          <MovieCard movie={movie} />
-        </Col>
+    <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+      {moviesData.map(movie => (
+        <MovieCard key={movie.id} movie={movie} />
       ))}
-    </Row>
+    </div>
   );
 }
 
